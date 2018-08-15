@@ -24,17 +24,17 @@ import java.util.Set;
 
 /**
  * Sample domain class.
- * 
+ *
  * @author Philip Huegelmeyer
  */
 @Audited
 @Entity
 public class License extends AbstractEntity {
 
-	@Version
-	public Integer version;
+  @Version
+  public Integer version;
 
-	public String name;
-	@ManyToMany
-	public Set<Country> laender;
+  public String name;
+  @ManyToMany
+  public Set<Country> laender;
 }

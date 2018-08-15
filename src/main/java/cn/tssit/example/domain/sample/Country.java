@@ -22,7 +22,7 @@ import javax.persistence.Entity;
 
 /**
  * Sample domain class.
- * 
+ *
  * @author Oliver Gierke
  * @author Jens Schauder
  */
@@ -31,6 +31,6 @@ import javax.persistence.Entity;
 @ToString
 public class Country extends AbstractEntity {
 
-	public String code;
-	public String name;
+  public String code;
+  public String name;
 }

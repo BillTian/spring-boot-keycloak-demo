@@ -25,7 +25,7 @@ import javax.persistence.MappedSuperclass;
 @EqualsAndHashCode
 abstract class AbstractEntity {
 
-	public @Id
+  public @Id
   @GeneratedValue
   Long id;
 }

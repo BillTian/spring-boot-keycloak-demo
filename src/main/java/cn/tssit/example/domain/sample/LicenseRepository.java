@@ -20,7 +20,7 @@ import org.springframework.data.repository.history.RevisionRepository;
 
 /**
  * Repository for {@link License} objects.
- * 
+ *
  * @author Oliver Gierke
  */
 public interface LicenseRepository extends RevisionRepository<License, Long, Integer>, JpaRepository<License, Long> {

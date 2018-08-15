@@ -20,7 +20,7 @@ import org.springframework.data.repository.history.RevisionRepository;
 
 /**
  * Repository for {@link Country} objects.
- * 
+ *
  * @author Oliver Gierke
  */
 public interface CountryRepository extends RevisionRepository<Country, Long, Integer>, JpaRepository<Country, Long> {
