@@ -34,6 +34,7 @@ spring:
         jdbc:
           lob:
             non_contextual_creation: true
+        integration.envers.enabled: false
 #  flyway:
 #    enabled: true
 #    locations: classpath:db/migration/{vendor}
