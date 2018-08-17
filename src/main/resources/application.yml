@@ -3,9 +3,10 @@ server:
 
 logging:
   level:
-    root: info
-    org.springframework.data: trace
+    root: debug
+    org.springframework: trace
     org.hibernate: trace
+    org.keycloak: trace
 
 debug: true
 
@@ -18,6 +19,8 @@ spring:
     url: jdbc:postgresql://127.0.0.1:5432/test
     username: test
     password: test
+    hikari:
+      maximum-pool-size: 4
 
   jpa:
     show_sql: true
@@ -74,3 +77,32 @@ management:
             user.name: "user"         #These two are needed so that the server
             user.password: "password" #can access the protected client endpoints
 
+keycloak:
+  enabled: true
+  connection-pool-size: 4
+  auth-server-url: http://127.0.0.1:8080/auth
+  realm: dev
+  ssl-required: external
+  resource: crm-demo
+  credentials:
+    secret: 0ebb62fc-a02e-4fdf-9f67-e5c94cba180a
+  use-resource-role-mappings: true
+  confidential-port: 0
+  autodetect-bearer-only: true
+  cors: true
+  principal-attribute: preferred_username
+  policy-enforcer-config:
+#    user-managed-access: {}   #uma
+    enforcement-mode: ENFORCING #PERMISSIVE #DISABLED #ENFORCING
+#    lazy-load-paths: true
+#    path-cache:
+#      max-entries: 100
+#      lifespan: 30000
+    on-deny-redirect-to: /
+  security-constraints:
+    - auth-roles:
+      - user
+#      security-collections:
+#        - name: protected
+#          patterns:
+#            - /*
